@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <h1>Calcula tu puntaje IMSS</h1>
+  
+  <form id="calculator-form">
+    <label for="career-average">Promedio de carrera (sobre 100):</label>
+    <input type="number" id="career-average" required>
+    
+    <label for="enarm-score">Puntaje ENARM (sobre 100):</label>
+    <input type="number" id="enarm-score" required>
+    
+    <label for="teaching-experience">Comprobante de ejercicio docente:</label>
+    <input type="checkbox" id="teaching-experience-checkbox">
+    <select id="teaching-experience-years" disabled>
+      <option value="0">Selecciona años de experiencia</option>
+      <option value="1">1 año</option>
+      <option value="2">2 años</option>
+      <option value="3">3 años</option>
+      <option value="4">4 años</option>
+    </select>
+    
+    <label for="publications">Publicaciones como autor:</label>
+    <input type="checkbox" id="publications-checkbox">
+    <select id="publications-count" disabled>
+      <option value="0">Selecciona número de publicaciones</option>
+      <option value="1">1 publicación</option>
+      <option value="2">2 publicaciones</option>
+      <option value="3">3 publicaciones</option>
+      <option value="4">4 publicaciones</option>
+    </select>
+    
+    <label for="child-imss">Hijo de trabajador IMSS:</label>
+    <input type="checkbox" id="child-imss">
+    
+    <label for="employee-imss">Trabajador IMSS:</label>
+    <input type="checkbox" id="employee-imss">
+    
+    <label for="internship-imss">Realizó internado en el IMSS:</label>
+    <input type="checkbox" id="internship-imss">
+    
+    <label for="social-service-imss">Realizó servicio social en el IMSS:</label>
+    <input type="checkbox" id="social-service-imss">
+    
+    <button type="submit">Calcular</button>
+  </form>
+  
+  <div id="result"></div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
