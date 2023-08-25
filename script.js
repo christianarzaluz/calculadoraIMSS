@@ -1,54 +1,49 @@
-document.getElementById('teaching-experience-checkbox').addEventListener('change', function() {
-    var select = document.getElementById('teaching-experience-years');
-    select.disabled = !this.checked;
-    select.selectedIndex = 0;
-  });
-  
-  document.getElementById('publications-checkbox').addEventListener('change', function() {
-    var select = document.getElementById('publications-count');
-    select.disabled = !this.checked;
-    select.selectedIndex = 0;
-  });
-  
-  document.getElementById('calculator-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-  
-    var careerAverage = parseFloat(document.getElementById('career-average').value);
-    var enarmScore = parseFloat(document.getElementById('enarm-score').value);
-    var teachingExperienceCheckbox = document.getElementById('teaching-experience-checkbox');
-    var teachingExperienceYears = parseInt(document.getElementById('teaching-experience-years').value);
-    var publicationsCheckbox = document.getElementById('publications-checkbox');
-    var publicationsCount = parseInt(document.getElementById('publications-count').value);
-    var childImss = document.getElementById('child-imss').checked;
-    var employeeImss = document.getElementById('employee-imss').checked;
-    var internshipImss = document.getElementById('internship-imss').checked;
-    var socialServiceImss = document.getElementById('social-service-imss').checked;
-  
-    var totalScore = (careerAverage + enarmScore) / 2;
-  
-    if (teachingExperienceCheckbox.checked) {
-      totalScore += Math.min(teachingExperienceYears, 4);
-    }
-  
-    if (publicationsCheckbox.checked) {
-      totalScore += Math.min(publicationsCount, 4);
-    }
-  
-    if (childImss && employeeImss) {
-      totalScore += 1;
-    } else if (childImss || employeeImss) {
-      totalScore += 0.75;
-    }
-  
-    if (internshipImss) {
-      totalScore += 0.25;
-    }
-  
-    if (socialServiceImss) {
-      totalScore += 0.75;
-    }
-  
-    document.getElementById('result').textContent = "Puntaje IMSS: " + totalScore.toFixed(2);
-  });
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('imss-form');
+    const resultContainer = document.getElementById('result-container');
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Obtener los valores del formulario
+        const promedioCarrera = parseFloat(document.getElementById('promedio-carrera').value) || 0;
+        const puntajeEnarm = parseFloat(document.getElementById('puntaje-enarm').value) || 0;
+        const ejercicioDocente = document.getElementById('ejercicio-docente').checked;
+        const añosEjercicioDocente = parseInt(document.getElementById('años-ejercicio-docente').value) || 0;
+        const publicacionesAutor = document.getElementById('publicaciones-autor').checked;
+        const cantidadPublicaciones = parseInt(document.getElementById('cantidad-publicaciones').value) || 0;
+        const hijoTrabajadorImss = document.getElementById('hijo-trabajador-imss').checked;
+        const trabajadorImss = document.getElementById('trabajador-imss').checked;
+        const realizoInternadoImss = document.getElementById('realizo-internado-imss').checked;
+        const realizoServicioSocialImss = document.getElementById('realizo-servicio-social-imss').checked;
+
+        // Realizar los cálculos
+        let puntaje = (promedioCarrera + puntajeEnarm) / 2;
+
+        if (ejercicioDocente) {
+            puntaje += Math.min(añosEjercicioDocente, 4) * 0.25; // Máximo 1 punto (0.25 por año)
+        }
+
+        if (publicacionesAutor) {
+            puntaje += Math.min(cantidadPublicaciones, 4) * 0.25; // Máximo 1 punto (0.25 por publicación)
+        }
+
+        if (hijoTrabajadorImss || trabajadorImss) {
+            puntaje += 1; // Se otorga 1 punto si es hijo o trabajador IMSS
+        }
+
+        if (realizoInternadoImss) {
+            puntaje += 0.25; // 0.25 puntos por realizar internado IMSS
+        }
+
+        if (realizoServicioSocialImss) {
+            puntaje += 0.75; // 0.75 puntos por realizar servicio social IMSS
+        }
+
+        // Mostrar el resultado en el elemento #result-container
+        resultContainer.textContent = `Tu puntaje IMSS es: ${puntaje.toFixed(2)} sobre 100`;
+    });
+});
+
   
   
