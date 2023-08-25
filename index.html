@@ -10,51 +10,57 @@
     <div class="container">
         <h1>Calculadora de Puntaje IMSS</h1>
         <form id="imss-form">
-            <label for="promedio-carrera">Introduce tu promedio de la carrera (sobre 100):</label>
-            <input type="number" id="promedio-carrera" required>
+            <label for="promedio-carrera">Promedio de Carrera (sobre 100):</label>
+            <input type="number" id="promedio-carrera" step="0.01" required>
 
-            <label for="puntaje-enarm">Introduce tu Puntaje ENARM (sobre 100):</label>
-            <input type="number" id="puntaje-enarm" required>
+            <label for="puntaje-enarm">Puntaje ENARM (sobre 100):</label>
+            <input type="number" id="puntaje-enarm" step="0.01" required>
 
-            <label for="ejercicio-docente">Tengo comprobante de Ejercicio Docente:</label>
-            <input type="checkbox" id="ejercicio-docente">
-            <label for="años-ejercicio-docente">Años de ejercicio docente:</label>
-            <select id="años-ejercicio-docente">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-            </select>
+            <label>Extras:</label>
+            <div class="extras">
+                <label for="ejercicio-docente">Comprobante de Ejercicio Docente:</label>
+                <input type="checkbox" id="ejercicio-docente">
+                <label for="años-ejercicio-docente">Años:</label>
+                <select id="años-ejercicio-docente">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
 
-            <label for="publicaciones-autor">Tengo publicaciones como Autor:</label>
-            <input type="checkbox" id="publicaciones-autor">
-            <label for="cantidad-publicaciones">Número de publicaciones como autor:</label>
-            <select id="cantidad-publicaciones">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-            </select>
+                <label for="publicaciones-autor">Publicaciones como Autor:</label>
+                <input type="checkbox" id="publicaciones-autor">
+                <label for="cantidad-publicaciones">Cantidad:</label>
+                <select id="cantidad-publicaciones">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
 
-            <label for="hijo-trabajador-imss">Soy hijo de Trabajador IMSS:</label>
-            <input type="checkbox" id="hijo-trabajador-imss">
+                <label for="hijo-trabajador-imss">Hijo de Trabajador IMSS:</label>
+                <input type="checkbox" id="hijo-trabajador-imss">
 
-            <label for="trabajador-imss">Soy Trabajador IMSS:</label>
-            <input type="checkbox" id="trabajador-imss">
+                <label for="trabajador-imss">Trabajador IMSS:</label>
+                <input type="checkbox" id="trabajador-imss">
 
-            <label for="realizo-internado-imss">Realicé mi Internado en el IMSS:</label>
-            <input type="checkbox" id="realizo-internado-imss">
+                <label for="realizo-internado-imss">Realizó Internado IMSS:</label>
+                <input type="checkbox" id="realizo-internado-imss">
 
-            <label for="realizo-servicio-social-imss">Realicé mi Servicio Social en el IMSS:</label>
-            <input type="checkbox" id="realizo-servicio-social-imss">
+                <label for="realizo-servicio-social-imss">Realizó Servicio Social IMSS:</label>
+                <input type="checkbox" id="realizo-servicio-social-imss">
+            </div>
 
             <button type="submit">Calcular Puntaje</button>
         </form>
 
-        <div id="result-container"></div>
+        <div id="result-container">
+            <p>Tu Puntaje IMSS es: <span id="puntaje-imss">0</span>/100</p>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
 </html>
+
