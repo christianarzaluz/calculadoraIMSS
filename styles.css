@@ -36,6 +36,10 @@ input[type="checkbox"] {
     border-radius: 5px;
 }
 
+.extras {
+    margin-top: 10px;
+}
+
 button {
     background-color: #025157;
     color: #fff;
@@ -48,6 +52,18 @@ button {
 button:hover {
     background-color: #014049;
 }
+
+#result-container {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #025157;
+}
+
+#puntaje-imss {
+    color: #FF5722;
+    font-size: 24px;
+}
+
 
 #result-container {
     margin-top: 20px;
