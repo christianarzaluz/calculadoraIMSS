@@ -7,25 +7,43 @@ document.addEventListener("DOMContentLoaded", function() {
         
         const promedioCarrera = parseFloat(document.getElementById("promedio-carrera").value);
         const puntajeEnarm = parseFloat(document.getElementById("puntaje-enarm").value);
+        const ejercicioDocente = document.getElementById("ejercicio-docente").checked;
         const añosEjercicioDocente = parseInt(document.getElementById("años-ejercicio-docente").value);
+        const publicacionesAutor = document.getElementById("publicaciones-autor").checked;
         const cantidadPublicaciones = parseInt(document.getElementById("cantidad-publicaciones").value);
         
-        const imssStatus = form.querySelector('input[name="imss-status"]:checked').value;
+        // Obtén el valor seleccionado (trabajador o hijo)
+        const imssStatus = document.querySelector('input[name="imss-status"]:checked');
+        
+        const realizoInternadoImss = document.getElementById("realizo-internado-imss").checked;
+        const realizoServicioSocialImss = document.getElementById("realizo-servicio-social-imss").checked;
         
         let puntaje = (promedioCarrera + puntajeEnarm) / 2;
         
-        // Calcula los puntos adicionales
-        puntaje += Math.min(añosEjercicioDocente, 2) * 0.5;
-        puntaje += Math.min(cantidadPublicaciones, 2) * 0.5;
-        
-        // Calcula los puntos según el estatus IMSS
-        if (imssStatus === "hijo") {
-            puntaje += 0.75;
-        } else if (imssStatus === "trabajador") {
-            puntaje += 1;
+        if (ejercicioDocente) {
+            puntaje += Math.min(añosEjercicioDocente, 2) * 0.5;
         }
         
-        // Mostrar el resultado
+        if (publicacionesAutor) {
+            puntaje += Math.min(cantidadPublicaciones, 2) * 0.5;
+        }
+        
+        if (imssStatus && imssStatus.value === "trabajador") {
+            // Suma 1 punto para trabajador IMSS
+            puntaje += 1;
+        } else if (imssStatus && imssStatus.value === "hijo") {
+            // Suma 0.75 puntos para hijo de trabajador IMSS
+            puntaje += 0.75;
+        }
+        
+        if (realizoInternadoImss) {
+            puntaje += 0.25;
+        }
+        
+        if (realizoServicioSocialImss) {
+            puntaje += 0.75;
+        }
+        
         resultContainer.innerHTML = `Tu Puntaje IMSS es: <span id="puntaje-imss">${puntaje.toFixed(2)}</span>/100`;
     });
 });
