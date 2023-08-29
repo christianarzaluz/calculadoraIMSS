@@ -27,7 +27,8 @@ label {
 
 input[type="number"],
 select,
-input[type="checkbox"] {
+input[type="checkbox"],
+input[type="radio"] {
     width: 100%;
     padding: 8px;
     margin-top: 5px;
