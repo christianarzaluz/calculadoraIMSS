@@ -18,38 +18,37 @@
 
             <label>Extras:</label>
             <div class="extras">
-    <label for="ejercicio-docente">Tengo comprobante de ejercicio docente:</label>
-    <input type="checkbox" id="ejercicio-docente">
-    <label for="años-ejercicio-docente">Años de ejercicio docente:</label>
-    <select id="años-ejercicio-docente">
-        <option value="0">0</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-    </select>
-</div>
+                <label for="ejercicio-docente">Tengo comprobante de ejercicio docente:</label>
+                <input type="checkbox" id="ejercicio-docente">
+                <label for="años-ejercicio-docente">Años de ejercicio docente:</label>
+                <select id="años-ejercicio-docente">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
 
-<div class="extras radio-buttons-container">
-    <label for="publicaciones-autor">Tengo publicaciones como Autor:</label>
-    <input type="checkbox" id="publicaciones-autor">
-    <label for="cantidad-publicaciones">Número de publicaciones:</label>
-    <select id="cantidad-publicaciones">
-        <option value="0">0</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-    </select>
-</div>
+                <label for="publicaciones-autor">Tengo publicaciones como Autor:</label>
+                <input type="checkbox" id="publicaciones-autor">
+                <label for="cantidad-publicaciones">Número de publicaciones:</label>
+                <select id="cantidad-publicaciones">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
 
-<div class="extras radio-buttons-container">
-    <label for="hijo-trabajador-imss">Soy hij@ de Trabajador IMSS:</label>
-    <input type="checkbox" id="hijo-trabajador-imss">
-
-    <label for="trabajador-imss">Soy trabajador IMSS:</label>
-    <input type="checkbox" id="trabajador-imss">
-</div>
+                <label for="imss-status">Estatus IMSS:</label>
+                <div>
+                    <input type="radio" id="hijo-trabajador-imss" name="imss-status" value="hijo">
+                    <label for="hijo-trabajador-imss">Soy hij@ de Trabajador IMSS</label>
+                </div>
+                <div>
+                    <input type="radio" id="trabajador-imss" name="imss-status" value="trabajador">
+                    <label for="trabajador-imss">Soy trabajador IMSS</label>
+                </div>
 
                 <label for="realizo-internado-imss">Realicé Internado en el IMSS:</label>
                 <input type="checkbox" id="realizo-internado-imss">
@@ -68,4 +67,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
