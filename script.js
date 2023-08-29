@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
             puntaje += 0.75;
         }
         
-        resultContainer.innerHTML = `Tu Puntaje IMSS es: <span id="puntaje-imss">${puntaje.toFixed(2)}</span>/100`;
+        resultContainer.innerHTML = `Tu Puntaje IMSS es: <span id="puntaje-imss">${puntaje.toFixed(2)}</span>`;
     });
 });
 
