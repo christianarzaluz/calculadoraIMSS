@@ -36,15 +36,8 @@ input[type="checkbox"] {
     border-radius: 5px;
 }
 
-
 .extras {
     margin-top: 10px;
-}
-/* ... Tu CSS anterior ... */
-
-.radio-buttons-container label {
-    display: inline-block;
-    margin-right: 10px;
 }
 
 button {
