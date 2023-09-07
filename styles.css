@@ -44,19 +44,6 @@ input[type="radio"] {
 }
 
 button {
-    background-color: #025157;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #014049;
-}
-/* Estilos para el botón de Resetear */
-#reset-button {
     background-color: #FF5722; /* Color de fondo */
     color: #fff; /* Color del texto */
     padding: 10px 20px; /* Espaciado interior */
@@ -66,8 +53,12 @@ button:hover {
     margin-left: 10px; /* Espacio entre el botón y el botón Calcular */
 }
 
-#reset-button:hover {
-    background-color: #F44336; /* Cambia el color de fondo al pasar por encima */
+button:hover {
+    background-color: #014049;
+}
+/* Estilos para el botón de Resetear */
+#reset-button {
+
 }
 
 #result-container {
