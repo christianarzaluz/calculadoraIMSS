@@ -44,10 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (realizoServicioSocialImss) {
             puntaje += 0.75;
         }
-         resetButton.addEventListener("click", function() {
-            // Resetear todos los campos del formulario
-            form.reset();
-            // Limpiar el resultado
+       
         resultContainer.innerHTML = `Tu Puntaje IMSS es: <span id="puntaje-imss">${puntaje.toFixed(2)}</span>`;
     });
 });
