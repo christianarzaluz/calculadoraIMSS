@@ -11,9 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const añosEjercicioDocente = parseInt(document.getElementById("años-ejercicio-docente").value);
         const publicacionesAutor = document.getElementById("publicaciones-autor").checked;
         const cantidadPublicaciones = parseInt(document.getElementById("cantidad-publicaciones").value);
-        const resetButton = document.getElementById("reset-button");
-        const form = document.getElementById("imss-form");
-        const resultContainer = document.getElementById("result-container");
+ 
         
         // Obtén el valor seleccionado (trabajador o hijo)
         const imssStatus = document.querySelector('input[name="imss-status"]:checked');
