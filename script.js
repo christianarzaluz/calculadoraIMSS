@@ -11,6 +11,9 @@ document.addEventListener("DOMContentLoaded", function() {
         const añosEjercicioDocente = parseInt(document.getElementById("años-ejercicio-docente").value);
         const publicacionesAutor = document.getElementById("publicaciones-autor").checked;
         const cantidadPublicaciones = parseInt(document.getElementById("cantidad-publicaciones").value);
+        const resetButton = document.getElementById("reset-button");
+        const form = document.getElementById("imss-form");
+        const resultContainer = document.getElementById("result-container");
         
         // Obtén el valor seleccionado (trabajador o hijo)
         const imssStatus = document.querySelector('input[name="imss-status"]:checked');
@@ -43,7 +46,10 @@ document.addEventListener("DOMContentLoaded", function() {
         if (realizoServicioSocialImss) {
             puntaje += 0.75;
         }
-        
+         resetButton.addEventListener("click", function() {
+            // Resetear todos los campos del formulario
+            form.reset();
+            // Limpiar el resultado
         resultContainer.innerHTML = `Tu Puntaje IMSS es: <span id="puntaje-imss">${puntaje.toFixed(2)}</span>`;
     });
 });
