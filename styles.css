@@ -55,6 +55,20 @@ button {
 button:hover {
     background-color: #014049;
 }
+/* Estilos para el botón de Resetear */
+#reset-button {
+    background-color: #FF5722; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interior */
+    border: none; /* Borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    margin-left: 10px; /* Espacio entre el botón y el botón Calcular */
+}
+
+#reset-button:hover {
+    background-color: #F44336; /* Cambia el color de fondo al pasar por encima */
+}
 
 #result-container {
     margin-top: 20px;
