@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function() {
         const publicacionesAutor = document.getElementById("publicaciones-autor").checked;
         const cantidadPublicaciones = parseInt(document.getElementById("cantidad-publicaciones").value);
  
-        
         // Obtén el valor seleccionado (trabajador o hijo)
         const imssStatus = document.querySelector('input[name="imss-status"]:checked');
         
@@ -26,7 +25,16 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         
         if (publicacionesAutor) {
-            puntaje += Math.min(cantidadPublicaciones, 2) * 0.5;
+            // Aplicar lógica para calcular la puntuación por publicaciones como autor
+            if (cantidadPublicaciones === 1) {
+                puntaje += 0.5;
+            } else if (cantidadPublicaciones === 2) {
+                puntaje += 1;
+            } else if (cantidadPublicaciones === 3) {
+                puntaje += 1.5;
+            } else if (cantidadPublicaciones >= 4) {
+                puntaje += 2;
+            }
         }
         
         if (imssStatus && imssStatus.value === "trabajador") {
@@ -48,7 +56,6 @@ document.addEventListener("DOMContentLoaded", function() {
         resultContainer.innerHTML = `Tu Puntaje IMSS es: <span id="puntaje-imss">${puntaje.toFixed(2)}</span>`;
     });
 });
-
 
 
   
