@@ -50,7 +50,6 @@ button {
     border: none; /* Borde */
     border-radius: 5px; /* Bordes redondeados */
     cursor: pointer; /* Cambia el cursor al pasar por encima */
-    margin-left: 10px; /* Espacio entre el botón y el botón Calcular */
     margin-right: 10px; /* Agrega margen a la derecha del botón */
 }
 
